@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### The certification
 
-The Tidyverse Certification is provided by RStudio and it attests to your pedagogical skills and knowledge of the Tidyverse ecosystem. To obtain the certification, the first step is to participate in a one-day training course that focuses on teaching methodologies. Then, you need to pass two exams: a teaching exam and a Tidyverse exam. For more information on how to get certified, you can navegate to the [trainers](https://education.rstudio.com/trainers/) site.
+The Tidyverse Certification is provided by RStudio and it attests to your pedagogical skills and knowledge of the Tidyverse ecosystem. To obtain the certification, the first step is to participate in a one-day training course that focuses on teaching methodologies. Then, you need to pass two exams: a teaching exam and a Tidyverse exam. For more information on how to get certified, you can navigate to the [trainers](https://education.rstudio.com/trainers/) site.
 
 
 
