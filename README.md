@@ -4,6 +4,7 @@ output:
   html_document:
     keep_md: true
     theme: simplex
+    highlight: tango
 ---
 
 
@@ -17,9 +18,9 @@ The Tidyverse Certification is provided by RStudio and it attests to your pedago
 
 ### Sample Test
 
-The Sample Exam is located at [./sample_exam/exam.html](./sample_exam/exam.html).
+The Sample Exam is located at [./sample_exam/exam.md](./sample_exam/exam.md).
 
-The Sample Exam with solutions is located at [./sample_exam_sols/sols.html](./sample_exam_sols/sols.html).
+The Sample Exam with solutions is located at [./sample_exam_sols/sols.md](./sample_exam_sols/sols.md).
 
 
 _Notes_:
