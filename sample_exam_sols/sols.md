@@ -4,6 +4,9 @@ output:
   html_document:
     keep_md: true
     toc: true
+    toc_float: true
+    theme: simplex
+    highlight: tango
 ---
 
 
@@ -126,8 +129,7 @@ and update `my_iso3 <- "BGD"` (it should now be on line 39) to use this new vari
   
     ```r
     rmarkdown::render("rmd-country-profile.Rmd", params = list(
-      country_code = "EGY"
-    ))
+      country_code = "EGY"))
     ```
 
 The completely fixed RMarkdown is at [data/fixed_rmd-country-profile.Rmd](../data/fixed_rmd-country-profile.Rmd).
