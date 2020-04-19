@@ -26,7 +26,7 @@ library(tidyverse)
 <!---------------------------------------------------------------------------->
 
 ## Instructions
-1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/). If you have any questions about scope, please get in touch - we’d be happy to clarify.
+1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/). If you have any questions about scope, please get in touch - we'd be happy to clarify.
 2. You may use any books or online resources you want during this examination, but you may not communicate with any person other than your examiner.
 3. You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
 4. You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.
@@ -100,7 +100,7 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
 
 1. Go through the file, fixing things that are preventing it from knitting cleanly.
 2. Change the two lines of bold text to H2-level headers to organize the document, and add a table of contents.
-3. Convert this R Markdown report for Bangladesh into a parameterized report with the country’s iso3 code as its parameter. Knit a new country profile for Egypt (ISO3 code "EGY").
+3. Convert this R Markdown report for Bangladesh into a parameterized report with the country's iso3 code as its parameter. Knit a new country profile for Egypt (ISO3 code "EGY").
 
 <!---------------------------------------------------------------------------->
 
@@ -153,7 +153,7 @@ You have been given a CSV file [infant_hiv.csv](https://education.rstudio.com/bl
 - The first column is ISO3 country codes.
 - There are three columns for each year from 2009 to 2017. Each set has estimated, low, and high values for the year (in that order).
 - A dash `-` indicates that no data is available.
-- Our analyst tells us that `>95%` means “the data is unreliable”.
+- Our analyst tells us that `>95%` means "the data is unreliable".
 
 Your task is to turn this into a tidy data table for further analysis:
 
@@ -209,15 +209,15 @@ tidy_data(file)
 The file ranking.csv contains two columns:
 
 - The ID of an item being rated.
-- A rating, which is one of “negative”, “positive”, “indi!erent”, or “wtf” (meaning the respondent didn’t understand the question).
+- A rating, which is one of "negative", "positive", "indifferent", or "wtf" (meaning the respondent didn't understand the question).
 
 There are multiple ratings for each item. The plot below shows this data:
 
 - Each dot represents one item i.
 - The size of the circles shows the total number of ratings for item i.
-- The X coordinate for item i is the percentage of ratings for that item that are “negative”.
-- The Y coordinate for item i is the percentage of ratings for that item that are “positive”.
-- The regression line is created using the ‘lm’ method.
+- The X coordinate for item i is the percentage of ratings for that item that are "negative".
+- The Y coordinate for item i is the percentage of ratings for that item that are "positive".
+- The regression line is created using the 'lm' method.
 
 
 ![ad](../images/ranking-scatterplot-1.png)
