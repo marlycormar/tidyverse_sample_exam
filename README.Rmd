@@ -1,8 +1,7 @@
 ---
 title: "Tidyverse Certification Sample Exam"
 output:
-  html_document:
-    theme: cosmo
+  md_document
 ---
 
 ```{r setup, include=FALSE}
