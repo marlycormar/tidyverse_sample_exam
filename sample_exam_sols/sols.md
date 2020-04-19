@@ -1,262 +1,241 @@
-<hr>
+---
+title: "Sample Exam with Solutions"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+---
+
+
+
+
+
+
+
+
 <!---------------------------------------------------------------------------->
 <!--------------------------- INSTRUCTIONS
 <!---------------------------------------------------------------------------->
-Instructions
-------------
 
-1.  This exam covers material from R for Data Science
-    (<a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>).
-    If you have any questions about scope, please get in touch - we’d be
-    happy to clarify.
-2.  You may use any books or online resources you want during this
-    examination, but you may not communicate with any person other than
-    your examiner.
-3.  You are required to use the RStudio IDE for this exam. You may use
-    either the desktop edition or rstudio.cloud as you prefer.
-4.  You may do your work in an R script or an R Markdown file, and may
-    use one for the whole exam or one for each question as your prefer.
-    Whichever you choose, you must send your final work to the examiner
-    by email upon completion of the examination.
-5.  Please let the examiner know when you finish each part of each
-    question so that they can check your work.
+## Instructions
+1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/). If you have any questions about scope, please get in touch - we'd be happy to clarify.
+2. You may use any books or online resources you want during this examination, but you may not communicate with any person other than your examiner.
+3. You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
+4. You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.
+5. Please let the examiner know when you finish each part of each question so that they can check your work.
 
-<hr>
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 1
 <!---------------------------------------------------------------------------->
-Question 1
-----------
 
-The file
-[at\_health\_facilities.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/at_health_facilities.csv)
-contains a tidy dataset with four columns:
+## Question 1
 
--   The ISO3 code of the country that reported data.
--   The year for which data was reported.
--   The percentage of HIV-positive children born to HIV-positive mothers
-    age 15–17.
--   The percentage of HIV-positive children born to HIV-positive mothers
-    age 20–34.
+The file [at_health_facilities.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/at_health_facilities.csv) contains a tidy dataset with four columns:
+
+- The ISO3 code of the country that reported data.
+- The year for which data was reported. 
+- The percentage of HIV-positive children born to HIV-positive mothers age 15–17. 
+- The percentage of HIV-positive children born to HIV-positive mothers age 20–34.
 
 Please answer the following questions:
 
-1.  How many countries reported data?
-2.  What is the difference between the minimum and maximum year with
-    valid data for each country?
-3.  How many countries reported data in 3 or more years?
-4.  Which countries reported 100% incidence for at least one year in
-    either age group?
+1. How many countries reported data?
+2. What is the difference between the minimum and maximum year with valid data for each country?
+3. How many countries reported data in 3 or more years?
+4. Which countries reported 100% incidence for at least one year in either age group?
 
 <!---------------------------------------------------------------------------->
+
 ### Solutions to Question 1
 
-    # Read dataset.
-    hiv <- read_csv("../data/at_health_facilities.csv")
 
-    ## Q1: How many countries reported data? 
-    ## A1: 100 countries reported data.
-    length(unique(hiv$iso3))
+```r
+# Read dataset.
+hiv <- read_csv("../data/at_health_facilities.csv")
 
-    ## Q2: What is the difference between the minimum and maximum year with valid data for each country?
-    ## A2: The difference between min & max is 14.
-    hiv %>%
-      filter(is.numeric(`age 15-17`) | is.numeric(`age 20-34`)) %>%
-      group_by(iso3) %>%
-      summarise(diff = max(year) - min(year))
+## Q1: How many countries reported data? 
+## A1: 100 countries reported data.
+length(unique(hiv$iso3))
 
-    ## Q3: How many countries reported data in 3 or more years?
-    ## A3: 34 countries.
-    hiv %>%
-      group_by(iso3) %>% 
-      summarise(years_count = n_distinct(year)) %>%
-      count(years_count >= 3)
+## Q2: What is the difference between the minimum and maximum year with valid data for each country?
+## A2: The difference set is the column `diff` below.
+hiv %>%
+  filter(is.numeric(`age 15-17`) | is.numeric(`age 20-34`)) %>%
+  group_by(iso3) %>%
+  summarise(diff = max(year) - min(year))
 
-    ## Q4: Which countries reported 100% incidence for at least one year in either age group?
-    ## A4: 18 countries.
-    hiv %>%
-      filter(`age 15-17` == 100 | `age 20-34` == 100) %>%
-      distinct(iso3) %>%
-      count()
+## Q3: How many countries reported data in 3 or more years?
+## A3: 34 countries.
+hiv %>%
+  group_by(iso3) %>% 
+  summarise(years_count = n_distinct(year)) %>%
+  count(years_count >= 3)
 
-<hr>
+## Q4: Which countries reported 100% incidence for at least one year in either age group?
+## A4: 18 countries.
+hiv %>%
+  filter(`age 15-17` == 100 | `age 20-34` == 100) %>%
+  distinct(iso3) %>%
+  count()
+```
+
+
+
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 2
 <!---------------------------------------------------------------------------->
-Question 2
-----------
 
-A student has sent you the file
-[rmd-country-profile.Rmd](https://education.rstudio.com/blog/2020-01-20-instructor-certification-exams/rmd-country-profile.Rmd),
-which is an R Markdown document analyzing the data in
-[at\_health\_facilities.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/at_health_facilities.csv)
-for Bangladesh. They could not knit the file, and are providing you with
-the raw .Rmd file instead of a rendered file.
+## Question 2
 
-1.  Go through the file, fixing things that are preventing it from
-    knitting cleanly.
-2.  Change the two lines of bold text to H2-level headers to organize
-    the document, and add a table of contents.
-3.  Convert this R Markdown report for Bangladesh into a parameterized
-    report with the country’s iso3 code as its parameter. Knit a new
-    country profile for Egypt (ISO3 code “EGY”).
+A student has sent you the file [rmd-country-profile.Rmd](https://education.rstudio.com/blog/2020-01-20-instructor-certification-exams/rmd-country-profile.Rmd), which is an R Markdown document analyzing the data in [at_health_facilities.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/at_health_facilities.csv) for Bangladesh. They could not knit the file, and are providing you with the raw .Rmd file instead of a rendered file.
+
+1. Go through the file, fixing things that are preventing it from knitting cleanly.
+2. Change the two lines of bold text to H2-level headers to organize the document, and add a table of contents.
+3. Convert this R Markdown report for Bangladesh into a parameterized report with the country's iso3 code as its parameter. Knit a new country profile for Egypt (ISO3 code "EGY").
 
 <!---------------------------------------------------------------------------->
+
 ### Solutions to Question 2
 
-1.  There are four errors in the RMarkdown file:
+1. There are four errors in the RMarkdown file:
+    
+    1. Line 3: Add missing `:` to `output`, i.e., line 3 should read `output:`. Also, hit tab on line 4 since yaml is sensitive to identation.
+    2. Line 9: To set knitting options, use the `set` function, i.e., line 9 should read: `knitr::opts_chunk$set(echo = FALSE)`.
+    3. Lines 57 \& 68: There are two chuncks with the same name `plot`. You can fix this by changing the name of one of such chuncks or simply getting rid of the names completely.
+    4. Lines 60-62: The correct operator is `+` instead of `%>%`.
 
-    1.  Line 3: Add missing `:` to `output`, i.e., line 3 should read
-        `output:`. Also, hit tab on line 4 since yaml relies on
-        identation.
-    2.  Line 9: To set knitting options, use the `set` function, i.e.,
-        line 9 should read: `knitr::opts_chunk$set(echo = FALSE)`.
-    3.  Lines 57 & 68: There are two chuncks with the same name `plot`.
-        You can fix this by changing the name of one of such chuncks or
-        simply getting rid of the names completely.
-    4.  Lines 60-62: The correct operator is `+` instead of `%>%`.
+2. Change bold text of lines 15 & 46 by replacing `**` to `##`. To add a table of contents, add `toc: TRUE` to the yaml setting at the top of the document. The top of the RMarkdown file should look like:
 
-2.  Change bold text of lines 15 & 46 by replacing `**` to `##`. To add
-    a table of contents, add `toc: TRUE` to the yaml setting at the top
-    of the document. The top of the RMarkdown file should look like:
+    ```r
+    ---
+    title: "Country Profile"
+    output:
+      html_document:
+        theme: flatly
+        toc: TRUE
+    ---
+    ```
 
-        ---
-        title: "Country Profile"
-        output:
-          html_document:
-            theme: flatly
-            toc: TRUE
-        ---
+3. Add the `params` option to the yaml with a variable to store the parametrized country code:
 
-3.  Add the `params` option to the yaml with a variable to store the
-    parametrized country code:
+    ```r
+    params:
+      country_code: "BGD"
+    ```
+and update `my_iso3 <- "BGD"` (it should now be on line 39) to use this new variable, i.e., `my_iso3 <- params$country_code`. To knit with a new parameter, you can go to the **Knit** dropdown in the IDE and click **Knit with Parameters** or run
+  
+    ```r
+    rmarkdown::render("rmd-country-profile.Rmd", params = list(
+      country_code = "EGY"
+    ))
+    ```
 
-        params:
-          country_code: "BGD"
+The completely fixed RMarkdown is at [data/fixed_rmd-country-profile.Rmd](../data/fixed_rmd-country-profile.Rmd).
 
-    and update `my_iso3 <- "BGD"` (it should now be on line 39) to use
-    this new variable, i.e., `my_iso3 <- params$country_code`. To knit
-    with a new parameter, you can go to the **Knit** dropdown in the IDE
-    and click **Knit with Parameters** or run
 
-        rmarkdown::render("rmd-country-profile.Rmd", params = list(
-          country_code = "EGY"
-        ))
-
-The completely fixed RMarkdown is at
-[data/fixed\_rmd-country-profile.Rmd](../data/fixed_rmd-country-profile.Rmd).
-
-<hr>
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 3
 <!---------------------------------------------------------------------------->
-Question 3
-----------
 
-You have been given a CSV file
-[infant\_hiv.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/infant_hiv.csv)
-that is formatted as follows:
+## Question 3
 
--   The first column is ISO3 country codes.
--   There are three columns for each year from 2009 to 2017. Each set
-    has estimated, low, and high values for the year (in that order).
--   A dash `-` indicates that no data is available.
--   Our analyst tells us that `>95%` means “the data is unreliable”.
+You have been given a CSV file [infant_hiv.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/infant_hiv.csv) that is formatted as follows:
+
+- The first column is ISO3 country codes.
+- There are three columns for each year from 2009 to 2017. Each set has estimated, low, and high values for the year (in that order).
+- A dash `-` indicates that no data is available.
+- Our analyst tells us that `>95%` means "the data is unreliable".
 
 Your task is to turn this into a tidy data table for further analysis:
 
-1.  Describe what columns a tidy layout for this data would have and
-    why.
-2.  Write a function that takes the name of a file containing this table
-    as input and returns a tidy version of the table.
-    -   The function should replace all `-` and `>95%` values with `NA`.
-    -   The body of the function may contain one or more pipelines and
-        may create temporary or intermediate variables, but may not
-        contain any loops.
+1. Describe what columns a tidy layout for this data would have and why.
+2. Write a function that takes the name of a file containing this table as input and returns a tidy version of the table.
+    - The function should replace all `-` and `>95%` values with `NA`.
+    - The body of the function may contain one or more pipelines and may create temporary or intermediate variables, but may not contain any loops.
 
 <!---------------------------------------------------------------------------->
+
 ### Solutions to Question 4
 
-1.  An approach to have a tidy layout for our data is to convert all the
-    columns but ISO3 into three new columns `year`, `stat`, and `value`.
-    The `stat` column contains `hi`, `low`, or `est`.
+1. An approach to have a tidy layout for our data is to convert all the columns but ISO3 into three new columns `year`, `stat`, and `value`. The `stat` column contains `hi`, `low`, or `est`.
 
-2.  The function `tidy_data` implements the approach on part 1.
+2. The function `tidy_data` implements the approach on part 1.
 
-<!-- -->
 
-    tidy_data <- function(file){
-      
-      # Read data.
-      raw_data <- read_csv(file) 
-      
-      # Tidy data by splitting the columns using a regex expression.
-      tidy <- raw_data %>%
-        pivot_longer(-ISO3,
-                     names_to = c("year", "stat"),
-                     names_pattern = "(.*) (.*)") %>%
-        mutate(value = case_when(
-          value == "-" | value == ">95%" ~ NA_character_,
-          TRUE ~ str_replace(value, pattern = "%", replacement = "")
-        ))
-      
-      # Return our tidy data.
-      tidy
-    }
+```r
+tidy_data <- function(file){
+  
+  # Read data.
+  raw_data <- read_csv(file) 
+  
+  # Tidy data by splitting the columns using a regex expression.
+  tidy <- raw_data %>%
+    pivot_longer(-ISO3,
+                 names_to = c("year", "stat"),
+                 names_pattern = "(.*) (.*)") %>%
+    mutate(value = case_when(
+      value == "-" | value == ">95%" ~ NA_character_,
+      TRUE ~ str_replace(value, pattern = "%", replacement = "")
+    ))
+  
+  # Return our tidy data.
+  tidy
+}
 
-    # Set data name/location.
-    file <- "../data/infant_hiv.csv"
+# Set data name/location.
+file <- "../data/infant_hiv.csv"
 
-    # Call our function to tidy data.
-    tidy_data(file)
+# Call our function to tidy data.
+tidy_data(file)
+```
+    
 
-<hr>
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 4
 <!---------------------------------------------------------------------------->
-Question 4
-----------
 
-The file ranking.csv contains two columns:
+## Question 4
 
--   The ID of an item being rated.
--   A rating, which is one of “negative”, “positive”, “indi!erent”, or
-    “wtf” (meaning the respondent didn’t understand the question).
+The file [ranking.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/ranking.csv) contains two columns:
 
-There are multiple ratings for each item. The plot below shows this
-data:
+- The ID of an item being rated.
+- A rating, which is one of "negative", "positive", "indifferent", or "wtf" (meaning the respondent didn't understand the question).
 
--   Each dot represents one item i.
--   The size of the circles shows the total number of ratings for
-    item i.
--   The X coordinate for item i is the percentage of ratings for that
-    item that are “negative”.
--   The Y coordinate for item i is the percentage of ratings for that
-    item that are “positive”.
--   The regression line is created using the ‘lm’ method.
+There are multiple ratings for each item. The plot below shows this data:
 
-![ad](../images/ranking-scatterplot-1.png)
+- Each dot represents one item i.
+- The size of the circles shows the total number of ratings for item i.
+- The X coordinate for item i is the percentage of ratings for that item that are "negative".
+- The Y coordinate for item i is the percentage of ratings for that item that are "positive".
+- The regression line is created using the 'lm' method.
 
-Re-create this plot using the tidyverse and ggplot2, fixing any mistakes
-you notice along the way.
+
+![](../images/ranking-scatterplot-1.png)
+
+Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you notice along the way.
+
 
 <!---------------------------------------------------------------------------->
+
 ### Solutions to Question 4
 
-    # Read data.
-    raw_data <- read_csv("../data/ranking.csv")
 
-    # Tidy data to ease plotting.
-    rankings <- raw_data %>%
-      group_by(item) %>%
-      count(rank) %>%
-      pivot_wider(names_from = rank, values_from = n) %>%
-      mutate(total = sum(positive, negative, indifferent, wtf, na.rm = TRUE)) %>%
-      mutate_at(vars(-item, -total), .funs = list(~ round(./total, digits = 2)))
+```r
+# Read data.
+raw_data <- read_csv("../data/ranking.csv")
 
-    # Reproduce given plot.
-    ggplot(rankings, aes(x = negative, y = positive, size = total)) +
-      geom_point(aes(alpha = 0.25)) +
-      geom_smooth(method='lm')
+# Tidy data to ease plotting.
+rankings <- raw_data %>%
+  group_by(item) %>%
+  count(rank) %>%
+  pivot_wider(names_from = rank, values_from = n) %>%
+  mutate(num = sum(positive, negative, indifferent, wtf, na.rm = TRUE)) %>%
+  mutate_at(vars(-item, -num), .funs = list(~ round(./num, digits = 2)))
 
-![](sols_files/figure-markdown_strict/question_four-1.png)
+# Reproduce given plot.
+ggplot(rankings, aes(x = negative, y = positive, size = num)) +
+  geom_point(aes(alpha = 0.25)) +
+  geom_smooth(method='lm')
+```
+
+![](sols_files/figure-html/question_four-1.png)<!-- -->
