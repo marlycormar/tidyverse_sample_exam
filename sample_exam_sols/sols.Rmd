@@ -66,7 +66,7 @@ hiv <- read_csv("../data/at_health_facilities.csv")
 length(unique(hiv$iso3))
 
 ## Q2: What is the difference between the minimum and maximum year with valid data for each country?
-## A2: The difference between min & max is 14.
+## A2: The difference set is the column `diff` below.
 hiv %>%
   filter(is.numeric(`age 15-17`) | is.numeric(`age 20-34`)) %>%
   group_by(iso3) %>%
@@ -108,7 +108,7 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
 
 1. There are four errors in the RMarkdown file:
     
-    1. Line 3: Add missing `:` to `output`, i.e., line 3 should read `output:`. Also, hit tab on line 4 since yaml relies on identation.
+    1. Line 3: Add missing `:` to `output`, i.e., line 3 should read `output:`. Also, hit tab on line 4 since yaml is sensitive to identation.
     2. Line 9: To set knitting options, use the `set` function, i.e., line 9 should read: `knitr::opts_chunk$set(echo = FALSE)`.
     3. Lines 57 \& 68: There are two chuncks with the same name `plot`. You can fix this by changing the name of one of such chuncks or simply getting rid of the names completely.
     4. Lines 60-62: The correct operator is `+` instead of `%>%`.
@@ -220,7 +220,7 @@ There are multiple ratings for each item. The plot below shows this data:
 - The regression line is created using the 'lm' method.
 
 
-![ad](../images/ranking-scatterplot-1.png)
+![](../images/ranking-scatterplot-1.png)
 
 Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you notice along the way.
 
