@@ -239,11 +239,11 @@ rankings <- raw_data %>%
   group_by(item) %>%
   count(rank) %>%
   pivot_wider(names_from = rank, values_from = n) %>%
-  mutate(total = sum(positive, negative, indifferent, wtf, na.rm = TRUE)) %>%
-  mutate_at(vars(-item, -total), .funs = list(~ round(./total, digits = 2)))
+  mutate(num = sum(positive, negative, indifferent, wtf, na.rm = TRUE)) %>%
+  mutate_at(vars(-item, -num), .funs = list(~ round(./num, digits = 2)))
 
 # Reproduce given plot.
-ggplot(rankings, aes(x = negative, y = positive, size = total)) +
+ggplot(rankings, aes(x = negative, y = positive, size = num)) +
   geom_point(aes(alpha = 0.25)) +
   geom_smooth(method='lm')
 
