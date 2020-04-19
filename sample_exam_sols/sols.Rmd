@@ -20,7 +20,6 @@ library(tidyverse)
 
 ```
 
-<hr>
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- INSTRUCTIONS
@@ -32,8 +31,6 @@ library(tidyverse)
 3. You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
 4. You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.
 5. Please let the examiner know when you finish each part of each question so that they can check your work.
-
-<hr>
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 1
@@ -92,7 +89,6 @@ hiv %>%
 ```
 
 
-<hr>
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 2
@@ -145,7 +141,6 @@ and update `my_iso3 <- "BGD"` (it should now be on line 39) to use this new vari
 
 The completely fixed RMarkdown is at [data/fixed_rmd-country-profile.Rmd](../data/fixed_rmd-country-profile.Rmd).
 
-<hr>
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 3
@@ -204,7 +199,6 @@ tidy_data(file)
 
 ```
     
-<hr>
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 4
