@@ -206,7 +206,7 @@ tidy_data(file)
 
 ## Question 4
 
-The file ranking.csv contains two columns:
+The file [ranking.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/ranking.csv) contains two columns:
 
 - The ID of an item being rated.
 - A rating, which is one of "negative", "positive", "indifferent", or "wtf" (meaning the respondent didn't understand the question).
