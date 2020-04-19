@@ -135,8 +135,8 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
     params:
       country_code: "BGD"
     ```
-and update `my_iso3 <- "BGD"` (it should now be on line 39) to use this new variable, i.e., `my_iso3 <- params$country_code`. To knit with a new parameter, you can go to the **Knit** dropdown in the IDE and click **Knit with Parameters** or run
-  
+  and update `my_iso3 <- "BGD"` (it should now be on line 39) to use this new variable, i.e., `my_iso3 <- params$country_code`. To knit with a new parameter, you can go to the **Knit** dropdown in the IDE and click **Knit with Parameters** or run:
+
     ```r
     rmarkdown::render("rmd-country-profile.Rmd", params = list(
       country_code = "EGY"))

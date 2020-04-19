@@ -1678,7 +1678,7 @@ div.tocify {
 <li><p>Add the <code>params</code> option to the yaml with a variable to store the parametrized country code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">params<span class="op">:</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span>country_code<span class="op">:</span><span class="st"> &quot;BGD&quot;</span></a></code></pre></div>
-<p>and update <code>my_iso3 &lt;- &quot;BGD&quot;</code> (it should now be on line 39) to use this new variable, i.e., <code>my_iso3 &lt;- params$country_code</code>. To knit with a new parameter, you can go to the <strong>Knit</strong> dropdown in the IDE and click <strong>Knit with Parameters</strong> or run</p>
+<p>and update <code>my_iso3 &lt;- &quot;BGD&quot;</code> (it should now be on line 39) to use this new variable, i.e., <code>my_iso3 &lt;- params$country_code</code>. To knit with a new parameter, you can go to the <strong>Knit</strong> dropdown in the IDE and click <strong>Knit with Parameters</strong> or run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;rmd-country-profile.Rmd&quot;</span>, <span class="dt">params =</span> <span class="kw">list</span>(</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">country_code =</span> <span class="st">&quot;EGY&quot;</span>))</a></code></pre></div></li>
 </ol>
