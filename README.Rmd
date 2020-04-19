@@ -1,8 +1,12 @@
 ---
 title: "Tidyverse Certification Sample Exam"
 output:
-  md_document
+  html_document:
+    keep_md: true
+    theme: simplex
+    highlight: tango
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -14,12 +18,11 @@ knitr::opts_chunk$set(echo = FALSE)
 The Tidyverse Certification is provided by RStudio and it attests to your pedagogical skills and knowledge of the Tidyverse ecosystem. To obtain the certification, the first step is to participate in a one-day training course that focuses on teaching methodologies. Then, you need to pass two exams: a teaching exam and a Tidyverse exam. For more information on how to get certified, you can navigate to the [trainers](https://education.rstudio.com/trainers/) site.
 
 
-
 ### Sample Test
 
-The Sample Exam is located at [./sample_exam/exam.html](./sample_exam/exam.html).
+The Sample Exam is located at [./sample_exam/exam.md](./sample_exam/exam.md).
 
-The Sample Exam with solutions is located at [./sample_exam_sols/sols.html](./sample_exam_sols/sols.html).
+The Sample Exam with solutions is located at [./sample_exam_sols/sols.md](./sample_exam_sols/sols.md).
 
 
 _Notes_:
