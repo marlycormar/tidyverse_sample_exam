@@ -229,7 +229,7 @@ Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you not
 
 ### Solutions to Question 4
 
-```{r question_four, message = FALSE}
+```{r question_four, echo=TRUE, message = FALSE}
 
 # Read data.
 raw_data <- read_csv("../data/ranking.csv")
