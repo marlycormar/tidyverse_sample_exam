@@ -1,10 +1,8 @@
 ---
 title: "Tidyverse Certification Sample Exam"
 output:
-  html_document:
-    keep_md: true
-    theme: simplex
-    highlight: tango
+  md_document:
+    variant: gfm
 ---
 
 
@@ -20,12 +18,12 @@ The Tidyverse Certification is provided by RStudio and it attests to your pedago
 
 ### Sample Test
 
-The Sample Exam is located at [./sample_exam/exam.md](./sample_exam/exam.md).
+The Sample Exam is at this [github page](https://marlycormar.github.io/tidyverse_sample_exam/exam.html).
 
-The Sample Exam with solutions is located at [./sample_exam_sols/sols.md](./sample_exam_sols/sols.md).
+The Sample Exam with solutions is located at [github page](https://marlycormar.github.io/tidyverse_sample_exam/sols.html).
 
 
 _Notes_:
 
-- The sample test in this repo comes from the RStudio blog post [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
+- The sample exam in this repo comes from the RStudio blog post [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
 - All the data needed for the exam is located at [./data](./data/).
