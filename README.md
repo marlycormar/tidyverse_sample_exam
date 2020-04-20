@@ -1,29 +1,23 @@
----
-title: "Tidyverse Certification Sample Exam"
-output:
-  html_document:
-    keep_md: true
-    theme: simplex
-    highlight: tango
----
-
-
-
-
-
 ### The certification
 
-The Tidyverse Certification is provided by RStudio and it attests to your pedagogical skills and knowledge of the Tidyverse ecosystem. To obtain the certification, the first step is to participate in a one-day training course that focuses on teaching methodologies. Then, you need to pass two exams: a teaching exam and a Tidyverse exam. For more information on how to get certified, you can navigate to the [trainers](https://education.rstudio.com/trainers/) site.
-
+The Tidyverse Certification is provided by RStudio and it attests to
+your pedagogical skills and knowledge of the Tidyverse ecosystem. To
+obtain the certification, the first step is to participate in a one-day
+training course that focuses on teaching methodologies. Then, you need
+to pass two exams: a teaching exam and a Tidyverse exam. For more
+information on how to get certified, you can navigate to the
+[trainers](https://education.rstudio.com/trainers/) site.
 
 ### Sample Test
 
-The Sample Exam is located at [./sample_exam/exam.md](./sample_exam/exam.md).
+The Sample Exam is at this [github
+page](https://marlycormar.github.io/tidyverse_sample_exam/exam.html).
 
-The Sample Exam with solutions is located at [./sample_exam_sols/sols.md](./sample_exam_sols/sols.md).
+The Sample Exam with solutions is located at [github
+page](https://marlycormar.github.io/tidyverse_sample_exam/sols.html).
 
+*Notes*:
 
-_Notes_:
-
-- The sample test in this repo comes from the RStudio blog post [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
-- All the data needed for the exam is located at [./data](./data/).
+  - The sample exam in this repo comes from the RStudio blog post
+    [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
+  - All the data needed for the exam is located at [./data](./data/).
