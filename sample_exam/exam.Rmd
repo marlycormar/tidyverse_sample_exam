@@ -1,5 +1,6 @@
 ---
 title: "Sample Exam"
+author: "[Marly Gotti](https://www.marlygotti.com)"
 output:
   html_document:
     toc: true
