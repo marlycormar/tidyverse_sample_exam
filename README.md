@@ -10,7 +10,7 @@ information on how to get certified, you can navigate to the
 
 ### Sample Test
 
-The Sample Exam is at this
+The Sample Exam is located at
 [./sample\_exam/exam.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam/exam.html).
 
 The Sample Exam with solutions is located at
