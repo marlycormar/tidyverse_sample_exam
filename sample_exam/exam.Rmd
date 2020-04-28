@@ -1,5 +1,6 @@
 ---
-title: "Sample Exam"
+title: "Tidyverse Certification"
+subtitle: "Sample Exam"
 author: "[Marly Gotti](https://www.marlygotti.com)"
 output:
   html_document:
