@@ -16,6 +16,12 @@ The Sample Exam is located at
 The Sample Exam with solutions is located at
 [./sample\_exam\_sols/sols.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html).
 
+### Need help?
+
+Reach out\! I am a certified RStudio instructor for both the Tidyverse
+ecosystem and Shiny. There are other great trainers out there as well;
+check out the full list [here](https://education.rstudio.com/trainers/).
+
 *Notes*:
 
   - The sample exam in this repo comes from the RStudio blog post

@@ -23,6 +23,10 @@ The Sample Exam is located at [./sample_exam/exam.html](https://marlycormar.gith
 The Sample Exam with solutions is located at [./sample_exam_sols/sols.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html).
 
 
+### Need help?
+
+Reach out! I am a certified RStudio instructor for both the Tidyverse ecosystem and Shiny. There are other great trainers out there as well; check out the full list [here](https://education.rstudio.com/trainers/).
+
 _Notes_:
 
 - The sample exam in this repo comes from the RStudio blog post [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
