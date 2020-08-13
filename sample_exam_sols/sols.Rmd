@@ -168,7 +168,7 @@ Your task is to turn this into a tidy data table for further analysis:
 
 <!---------------------------------------------------------------------------->
 
-### Solutions to Question 4
+### Solutions to Question 3
 
 1. An approach to have a tidy layout for our data is to convert all the columns but ISO3 into three new columns `year`, `stat`, and `value`. The `stat` column contains `hi`, `low`, or `est`.
 
