@@ -184,21 +184,21 @@ tidy_data <- function(file){
   # Tidy data by splitting the columns using a regex expression.
   tidy <- raw_data %>%
     pivot_longer(-ISO3,
-                 names_to = c("year", "stat"),
+                 names_to = c("year", "stats"),
                  names_pattern = "(.*) (.*)") %>%
     mutate(value = case_when(
       value == "-" | value == ">95%" ~ NA_character_,
       TRUE ~ str_replace(value, pattern = "%", replacement = "")
     ))
   
-  # Return our tidy data.
+  # Return tidy data.
   tidy
 }
 
-# Set data name/location.
+# Set data file name/location.
 file <- "../data/infant_hiv.csv"
 
-# Call our function to tidy data.
+# Tidy data by calling the function we just created.
 tidy_data(file)
 
 ```
