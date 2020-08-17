@@ -59,7 +59,7 @@ Please answer the following questions:
 
 <!---------------------------------------------------------------------------->
 
-### Solutions to Question 1
+### Solution to Question 1
 
 ```{r question_one}
 
@@ -109,7 +109,7 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
 
 <!---------------------------------------------------------------------------->
 
-### Solutions to Question 2
+### Solution to Question 2
 
 1. There are four errors in the RMarkdown file:
     
@@ -168,7 +168,7 @@ Your task is to turn this into a tidy data table for further analysis:
 
 <!---------------------------------------------------------------------------->
 
-### Solutions to Question 3
+### Solution to Question 3
 
 1. An approach to have a tidy layout for our data is to convert all the columns but ISO3 into three new columns `year`, `stat`, and `value`. The `stat` column contains `hi`, `low`, or `est`.
 
@@ -231,7 +231,7 @@ Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you not
 
 <!---------------------------------------------------------------------------->
 
-### Solutions to Question 4
+### Solution to Question 4
 
 ```{r question_four, echo=TRUE, message = FALSE}
 
