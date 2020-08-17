@@ -170,7 +170,7 @@ Your task is to turn this into a tidy data table for further analysis:
 
 ### Solution to Question 3
 
-1. An approach to have a tidy layout for our data is to convert all the columns but ISO3 into three new columns `year`, `stat`, and `value`. The `stat` column contains `hi`, `low`, or `est`.
+1. An approach to have a tidy layout for our data is to collapse all the columns but ISO3 into three new columns `year`, `stats`, and `value`. The `stats` column may contain the values `hi`, `low`, or `est`.
 
 2. The function `tidy_data` implements the approach on part 1.
 
