@@ -118,7 +118,7 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
     3. Lines 57 \& 68: There are two chuncks with the same name `plot`. You can fix this by changing the name of one of such chuncks or simply getting rid of the names completely.
     4. Lines 60-62: The correct operator is `+` instead of `%>%`.
 
-2. Change bold text of lines 15 & 46 by replacing `**` to `##`. To add a table of contents, add `toc: TRUE` to the yaml setting at the top of the document. The top of the RMarkdown file should look like:
+2. Change bold text of lines 15 & 46 by replacing `**` to `##`. To add a table of contents, add `toc: TRUE` to the yaml options at the top of the RMarkdown file. It should now look as follows.
 
     ```r
     ---
