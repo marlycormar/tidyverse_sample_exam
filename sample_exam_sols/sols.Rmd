@@ -130,7 +130,7 @@ A student has sent you the file [rmd-country-profile.Rmd](https://education.rstu
     ---
     ```
 
-3. Add the `params` option to the yaml with a variable to store the parametrized country code:
+3. Add `params` to the yaml options, specifying a variable name to store the country code:
 
     ```r
     params:
