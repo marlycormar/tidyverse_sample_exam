@@ -23,11 +23,24 @@ knitr::opts_chunk$set(echo = FALSE)
 <!---------------------------------------------------------------------------->
 
 ## Instructions
-1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/). If you have any questions about scope, please get in touch - we'd be happy to clarify.
-2. You may use any books or online resources you want during this examination, but you may not communicate with any person other than your examiner.
-3. You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
-4. You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.
-5. Please let the examiner know when you finish each part of each question so that they can check your work.
+1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/).
+If you have any questions about scope, please get in touch - we'd be happy to
+clarify.
+
+2. You may use any books or online resources you want during this examination,
+but you may not communicate with any person other than your examiner.
+
+3. You are required to use the RStudio IDE for this exam. You may use either
+the desktop edition or rstudio.cloud as you prefer.
+
+4. You may do your work in an R script or an R Markdown file, and may use one
+for the whole exam or one for each question as your prefer. Whichever you
+choose,
+you must send your final work to the examiner by email upon completion of the
+examination.
+
+5. Please let the examiner know when you finish each part of each question so
+that they can check your work.
 
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 1
