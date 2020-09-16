@@ -277,7 +277,8 @@ are "positive".
 
 ![](../images/ranking-scatterplot-1.png)
 
-Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you notice along the way.
+Re-create this plot using the tidyverse and ggplot2, fixing any mistakes you
+notice along the way.
 
 
 <!---------------------------------------------------------------------------->
