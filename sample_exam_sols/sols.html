@@ -1620,11 +1620,11 @@ div.tocify {
 <div id="instructions" class="section level2">
 <h2>Instructions</h2>
 <ol style="list-style-type: decimal">
-<li>This exam covers material from R for Data Science (<a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>). If you have any questions about scope, please get in touch - we’d be happy to clarify.</li>
-<li>You may use any books or online resources you want during this examination, but you may not communicate with any person other than your examiner.</li>
-<li>You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.</li>
-<li>You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.</li>
-<li>Please let the examiner know when you finish each part of each question so that they can check your work.</li>
+<li><p>This exam covers material from R for Data Science (<a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a>). If you have any questions about scope, please get in touch - we’d be happy to clarify.</p></li>
+<li><p>You may use any books or online resources you want during this examination, but you may not communicate with any person other than your examiner.</p></li>
+<li><p>You are required to use the RStudio IDE for this exam. You may use either the desktop edition or rstudio.cloud as you prefer.</p></li>
+<li><p>You may do your work in an R script or an R Markdown file, and may use one for the whole exam or one for each question as your prefer. Whichever you choose, you must send your final work to the examiner by email upon completion of the examination.</p></li>
+<li><p>Please let the examiner know when you finish each part of each question so that they can check your work.</p></li>
 </ol>
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 1
@@ -1656,26 +1656,28 @@ div.tocify {
 <span id="cb1-5"><a href="#cb1-5"></a><span class="co">## A1: 100 countries reported data.</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="kw">length</span>(<span class="kw">unique</span>(hiv<span class="op">$</span>iso3))</span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co">## Q2: What is the difference between the minimum and maximum year with valid data for each country?</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">## A2: The difference set is the column `diff` below.</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>hiv <span class="op">%&gt;%</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">is.numeric</span>(<span class="st">`</span><span class="dt">age 15-17</span><span class="st">`</span>) <span class="op">|</span><span class="st"> </span><span class="kw">is.numeric</span>(<span class="st">`</span><span class="dt">age 20-34</span><span class="st">`</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span><span class="kw">group_by</span>(iso3) <span class="op">%&gt;%</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">diff =</span> <span class="kw">max</span>(year) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(year))</span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co">## Q3: How many countries reported data in 3 or more years?</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="co">## A3: 34 countries.</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a>hiv <span class="op">%&gt;%</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="st">  </span><span class="kw">group_by</span>(iso3) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">years_count =</span> <span class="kw">n_distinct</span>(year)) <span class="op">%&gt;%</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="st">  </span><span class="kw">count</span>(years_count <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span>)</span>
-<span id="cb1-21"><a href="#cb1-21"></a></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="co">## Q4: Which countries reported 100% incidence for at least one year in either age group?</span></span>
-<span id="cb1-23"><a href="#cb1-23"></a><span class="co">## A4: 18 countries.</span></span>
-<span id="cb1-24"><a href="#cb1-24"></a>hiv <span class="op">%&gt;%</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a><span class="st">  </span><span class="kw">filter</span>(<span class="st">`</span><span class="dt">age 15-17</span><span class="st">`</span> <span class="op">==</span><span class="st"> </span><span class="dv">100</span> <span class="op">|</span><span class="st"> `</span><span class="dt">age 20-34</span><span class="st">`</span> <span class="op">==</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></span>
-<span id="cb1-26"><a href="#cb1-26"></a><span class="st">  </span><span class="kw">distinct</span>(iso3) <span class="op">%&gt;%</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a><span class="st">  </span><span class="kw">count</span>()</span></code></pre></div>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">## Q2: What is the difference between the minimum and maximum year with valid</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">## data for each country?</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">## A2: The difference set is the column `diff` below.</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>hiv <span class="op">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">is.numeric</span>(<span class="st">`</span><span class="dt">age 15-17</span><span class="st">`</span>) <span class="op">|</span><span class="st"> </span><span class="kw">is.numeric</span>(<span class="st">`</span><span class="dt">age 20-34</span><span class="st">`</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="st">  </span><span class="kw">group_by</span>(iso3) <span class="op">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">diff =</span> <span class="kw">max</span>(year) <span class="op">-</span><span class="st"> </span><span class="kw">min</span>(year))</span>
+<span id="cb1-15"><a href="#cb1-15"></a></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">## Q3: How many countries reported data in 3 or more years?</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">## A3: 34 countries.</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>hiv <span class="op">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="st">  </span><span class="kw">group_by</span>(iso3) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">years_count =</span> <span class="kw">n_distinct</span>(year)) <span class="op">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">  </span><span class="kw">count</span>(years_count <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span>)</span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">## Q4: Which countries reported 100% incidence for at least one year in either</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">## age group?</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">## A4: 18 countries.</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>hiv <span class="op">%&gt;%</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="st">  </span><span class="kw">filter</span>(<span class="st">`</span><span class="dt">age 15-17</span><span class="st">`</span> <span class="op">==</span><span class="st"> </span><span class="dv">100</span> <span class="op">|</span><span class="st"> `</span><span class="dt">age 20-34</span><span class="st">`</span> <span class="op">==</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="st">  </span><span class="kw">distinct</span>(iso3) <span class="op">%&gt;%</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="st">  </span><span class="kw">count</span>()</span></code></pre></div>
 <!---------------------------------------------------------------------------->
 <!--------------------------- QUESTION 2
 <!---------------------------------------------------------------------------->
@@ -1708,10 +1710,10 @@ div.tocify {
 <span id="cb2-5"><a href="#cb2-5"></a><span class="st">    </span>theme<span class="op">:</span><span class="st"> </span>flatly</span>
 <span id="cb2-6"><a href="#cb2-6"></a>    toc<span class="op">:</span><span class="st"> </span><span class="ot">TRUE</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="op">---</span></span></code></pre></div></li>
-<li><p>Add <code>params</code> to the yaml options, specifying a variable name that will store the country code:</p>
+<li><p>Add <code>params</code> to the yaml options, specifying a variable name to store the country code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>params<span class="op">:</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="st">  </span>country_code<span class="op">:</span><span class="st"> &quot;BGD&quot;</span></span></code></pre></div>
-<p>and update <code>my_iso3 &lt;- &quot;BGD&quot;</code> (it should now be on line 39) to use this new variable, i.e., <code>my_iso3 &lt;- params$country_code</code>. To knit with a new parameter, you can go to the <strong>Knit</strong> dropdown in the IDE and click <strong>Knit with Parameters</strong> or alternative, you can run the code below.</p>
+<p>and update <code>my_iso3 &lt;- &quot;BGD&quot;</code> (it should now be on line 39) to use this new variable, i.e., <code>my_iso3 &lt;- params$country_code</code>. To knit with a new parameter, you can go to the <strong>Knit</strong> dropdown in the IDE and click <strong>Knit with Parameters</strong> or alternatively, you can run the code below.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">&quot;rmd-country-profile.Rmd&quot;</span>, <span class="dt">params =</span> <span class="kw">list</span>(</span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="dt">country_code =</span> <span class="st">&quot;EGY&quot;</span>))</span></code></pre></div></li>
 </ol>
