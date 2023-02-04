@@ -2,28 +2,12 @@
 
 <br>
 
+
 ### About
-
-<div style = 'float: right; width: 35%; text-align: center; margin-left: 15px;'>
-  <img style="box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);
-  background: white;
-  border-radius: 5px;
-  background: #EEF2F7;" src="images/books.jpg">
- Photo by <a href="https://unsplash.com/@heftiba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Toa
-  Heftiba</a> on <a href="https://unsplash.com/images/things/book?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-</div>
-
 
 This repository contains a sample **RStudio Tidyverse Certification**
 exam with solutions.
 
-<hr>
 
 ### The certification
 
@@ -36,9 +20,7 @@ information on how to get certified, you can navigate to the
 [trainers](https://education.rstudio.com/trainers/) site.
 
 
-<hr>
-
-### Sample Test
+### Sample exam
 
 The Sample Exam without solutions is located at
 [./sample_exam/exam.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam/exam.html).
@@ -65,8 +47,6 @@ The Sample Exam with solutions is located at
 -   Official RStudio Instructor Training and Certification site:
     [website](https://education.rstudio.com/trainers/).
 
-
-<hr>
 
 ### Need help?
 
