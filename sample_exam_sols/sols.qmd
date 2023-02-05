@@ -2,36 +2,82 @@
 title: "Tidyverse Certification"
 subtitle: "Sample Exam with Solutions"
 author: "[Marly Gotti](https://www.marlygotti.com)"
-output:
-  html_document:
+format:
+  html:
     toc: true
-    toc_float: true
-    theme: simplex
-    highlight: tango
+    toc-location: left
+    theme: minty
+    code-copy: true
+    smooth-scroll: true
+    link-external-icon: true
 ---
 
 
+[Report issues {{< fa brands github >}}](https://github.com/marlycormar/tidyverse_sample_exam)
+
+
 ```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = TRUE, results = "hide", error = FALSE,
-                      warning = FALSE, message = FALSE)
-
+knitr::opts_chunk$set(
+  echo = TRUE,
+  results = "hide",
+  error = FALSE,
+  warning = FALSE,
+  message = FALSE)
 ```
 
 
 ```{r load_libraries, include=FALSE}
 
 library(tidyverse)
+library(fontawesome)
+library(bsicons)
 
 ```
 
 
-<!---------------------------------------------------------------------------->
-<!--------------------------- INSTRUCTIONS
-<!---------------------------------------------------------------------------->
+## About the certification
 
-## Instructions
-1. This exam covers material from R for Data Science (https://r4ds.had.co.nz/).
+::: {.column-margin}
+![](images/logos.png)
+:::
+
+
+The Tidyverse Certification is provided by RStudio and it attests to
+your pedagogical skills and knowledge of the Tidyverse ecosystem. To
+obtain the certification, the first step is to participate in a one-day
+training course that focuses on teaching methodologies. The second step
+is to pass two exams: a teaching exam and a Tidyverse exam. Below you will 
+find solutions to the Tidyverse sample example provided by RStudio.
+
+For more information on how to get certified, you can navigate to the
+[trainers](https://education.rstudio.com/trainers/) site.
+
+
+### Resources
+
+-   Slides used by [Greg](https://github.com/gvwilson) during training:
+    [google
+    drive](https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY).
+
+-   RStudio Blog announcing the RStudio Tidyverse Certification:
+    [blog](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
+
+-   Official RStudio Instructor Training and Certification site:
+    [website](https://education.rstudio.com/trainers/).
+
+
+### Need help?
+
+Reach out! I am a certified RStudio instructor for both the Tidyverse
+ecosystem and Shiny. There are other amazing trainers out there;
+check out the full list [here](https://education.rstudio.com/trainers/).
+
+
+## Sample Exam
+
+### Instructions
+
+1. This exam covers material from R for Data Science [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/).
 If you have any questions about scope, please get in touch - we'd be happy to
 clarify.
 
@@ -53,7 +99,7 @@ that they can check your work.
 <!--------------------------- QUESTION 1
 <!---------------------------------------------------------------------------->
 
-## Question 1
+### Question 1
 
 The file
 [at_health_facilities.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/at_health_facilities.csv)
@@ -77,7 +123,7 @@ group?
 
 <!---------------------------------------------------------------------------->
 
-### Solution to Question 1
+#### Solution to Question 1
 
 ```{r question_one}
 
@@ -119,7 +165,7 @@ hiv %>%
 <!--------------------------- QUESTION 2
 <!---------------------------------------------------------------------------->
 
-## Question 2
+### Question 2
 
 A student has sent you the file
 [rmd-country-profile.Rmd](https://education.rstudio.com/blog/2020-01-20-instructor-certification-exams/rmd-country-profile.Rmd),
@@ -137,7 +183,7 @@ Egypt (ISO3 code "EGY").
 
 <!---------------------------------------------------------------------------->
 
-### Solution to Question 2
+#### Solution to Question 2
 
 1. There are four errors in the RMarkdown file:
     
@@ -189,7 +235,7 @@ The completely fixed RMarkdown is at
 <!--------------------------- QUESTION 3
 <!---------------------------------------------------------------------------->
 
-## Question 3
+### Question 3
 
 You have been given a CSV file
 [infant_hiv.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/infant_hiv.csv)
@@ -212,7 +258,7 @@ input and returns a tidy version of the table.
 
 <!---------------------------------------------------------------------------->
 
-### Solution to Question 3
+#### Solution to Question 3
 
 1. An approach to have a tidy layout for our data is to collapse all the
 columns but ISO3 into three new columns `year`, `stats`, and `value`. The
@@ -254,7 +300,7 @@ tidy_data(file)
 <!--------------------------- QUESTION 4
 <!---------------------------------------------------------------------------->
 
-## Question 4
+### Question 4
 
 The file
 [ranking.csv](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/ranking.csv)
@@ -283,7 +329,7 @@ notice along the way.
 
 <!---------------------------------------------------------------------------->
 
-### Solution to Question 4
+#### Solution to Question 4
 
 ```{r question_four, echo=TRUE, message = FALSE}
 
@@ -304,3 +350,4 @@ ggplot(rankings, aes(x = negative, y = positive, size = num)) +
   geom_smooth(method='lm')
 
 ```
+

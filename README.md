@@ -1,8 +1,5 @@
 ## Tidyverse Certification Sample Exam
 
-<br>
-
-
 ### About
 
 This repository contains a sample **RStudio Tidyverse Certification**
@@ -22,18 +19,8 @@ information on how to get certified, you can navigate to the
 
 ### Sample exam
 
-The Sample Exam without solutions is located at
-[./sample_exam/exam.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam/exam.html).
-
-The Sample Exam with solutions is located at
+The sample exam with solutions is located at
 [./sample_exam_sols/sols.html](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html).
-
-*Notes*:
-
--   The sample exam in this repo comes from the RStudio blog post
-    [here](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/).
-
--   All the data needed for the exam is located at [./data](./data/).
 
 ### Resources
 
